@@ -1,7 +1,12 @@
-import { redirect } from 'next/navigation';
-import React from 'react'
+import { redirect } from "next/navigation";
 
-function ProudctsDetails ({ params }:{params:{productsId:string}}) {
+type Props = {
+  params: {
+    productsId: string;
+  }
+}
+
+function ProudctsDetails ({ params }:Props) {
   (function () {
     if (params.productsId === "2") {
       redirect("/products/5")
