@@ -1,5 +1,9 @@
 export const metadata = {
-  title: "home page",
+  title: {
+    absolute: "",
+    default: "next js tutorial - condevolution",
+    template:"%s | codevolution"
+  },
   description:"from main layout"
 }
 export default function RootLayout({
@@ -10,8 +14,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body >
+        hello deer
         { children }
       </body>
     </html>
   )
 }
+
