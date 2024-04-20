@@ -19,7 +19,7 @@ async function page () {
             width={ 100 }
             height={120}
           />
-          <p>{ session.user.email }</p>
+          <p>{ session.user?.email as string }</p>
         </div> : <Signin /> }
         { session && <Signout/> }
       </div>
