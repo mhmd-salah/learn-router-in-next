@@ -14,7 +14,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body >
-        hello deer
+        <header
+          className=" bg-slate-100 shadow-md text-black sticky top-0"
+        >
+          <div className="py-5 px-20 flex justify-between items-center">
+            <a href="logo" className="text-2xl font-bold text-sky-500 ">ozzx</a>
+            <ul className="flex  gap-2">
+              <li>home</li>
+              <li>about</li>
+              <li>contact</li>
+            </ul>
+          </div>
+        </header>
         { children }
       </body>
     </html>

@@ -12,7 +12,7 @@ import LoadingPost from "./_components/LoadingPost";
 async function page () {
   // const session = await getServerSession(authOption)
   async function getData () {
-    const res = fetch("https://jsonplaceholder.typicode.com/posts" ,{cache:"no-cache"});
+    const res = fetch("https://jsonplaceholder.typicode.com/posts", { cache: "no-cache" });
     if (!res) {
       throw new Error("filed fetch data");
     }
@@ -26,29 +26,14 @@ async function page () {
   };
   const data: post[] = await getData();
   return (
-    <div>
-      <h1>Home Page</h1>
-        { data.map((post: post) => (<div key={ post.id }>
-      <Suspense fallback={ <LoadingPost/>} >
-          <h1 className="text-red-400">{ post.title }</h1>
-          <h2>{ post.body }</h2>
-      </Suspense>
-        </div>)) }
-      {/* <div>
-        { session ? <div className="flex justify-between bg-slate-700 items-center px-10">
-          <h1>{ session?.user?.name }</h1>
-          <Image
-            src={ session.user?.image as string }
-            alt="this profile image"
-            width={ 100 }
-            height={ 120 }
-            className="w-20 rounded-full shadow-md"
-          />
-          <p>{ session.user?.email as string }</p>
-        </div> : <Signin /> }
-        { session && <Signout/> }
-      </div> */}
-      <Link replace  href="/posts">posts</Link>
+    <div className="mt-3 flex gap-2 flex-wrap mx-auto justify-center">
+      { data.map((post: post) => (<div key={ post.id }>
+          <div className="p-4 bg-slate-300 rounded-sm mb-3 w-96">
+            <h1 className="text-red-400">{ post.title }</h1>
+            <h2>{ post.body }</h2>
+          </div>
+      </div>)) }
+      <Link replace href="/posts">posts</Link>
     </div>
   );
 }
