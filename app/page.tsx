@@ -28,7 +28,7 @@ async function page () {
   return (
     <div className="mt-3 flex gap-2 flex-wrap mx-auto justify-center">
       { data.map((post: post) => (<div key={ post.id }>
-          <div className="p-4 bg-slate-300 rounded-sm mb-3 w-96">
+          <div className="p-4 post rounded-sm mb-3 w-96">
             <h1 className="text-red-400">{ post.title }</h1>
             <h2>{ post.body }</h2>
           </div>

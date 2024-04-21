@@ -8,8 +8,12 @@ export const metadata = {
 }
 export default function RootLayout({
   children,
+  team,
+  analytics
 }: {
-  children: React.ReactNode
+    children: React.ReactNode,
+    team: React.ReactNode,
+    analytics:React.ReactNode,
 }) {
   return (
     <html lang="en">
@@ -27,6 +31,8 @@ export default function RootLayout({
           </div>
         </header>
         { children }
+        { team }
+        {analytics}
       </body>
     </html>
   )
