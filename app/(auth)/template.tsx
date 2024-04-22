@@ -8,7 +8,8 @@ function AuthLayout ({ children }: { children: React.ReactNode; }) {
     <div>
       <input type="text"
         value={input}
-        onChange={(e)=> setInput(e.target.value)}
+        onChange={ (e) => setInput(e.target.value) }
+        className="border focus:outline-none"
       />
     </div>
     <div className="my-3 bg-gray-200 p-2 w-fit rounded-md">

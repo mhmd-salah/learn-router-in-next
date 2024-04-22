@@ -26,15 +26,23 @@ async function page () {
   };
   const data: post[] = await getData();
   return (
-    <div className="mt-3 flex gap-2 flex-wrap mx-auto justify-center">
-      { data.map((post: post) => (<div key={ post.id }>
-          <div className="p-4 post rounded-sm mb-3 w-96">
-            <h1 className="text-red-400">{ post.title }</h1>
+    <>
+        <Link href={ "/order-product" }
+          className="self-start  w-fit text-center px-2 py-1 bg-[#f7f7f7] hover:bg-[#e3e3e3] transition m-3 block"
+        >order products</Link>
+      <Link
+        href="/posts"
+        className="self-start  w-fit text-center px-2 py-1 bg-[#f7f7f7] hover:bg-[#e3e3e3] transition m-3 block"
+      >posts</Link>
+      <div className="mt-3 flex gap-2 flex-wrap mx-auto justify-center items-stretch">
+        { data.map((post: post) => (<div key={ post.id }>
+          <div className="p-4 post rounded-sm mb-3 w-96 h-[200px]">
+            <h1 className="font-bold">{ post.title }</h1>
             <h2>{ post.body }</h2>
           </div>
-      </div>)) }
-      <Link replace href="/posts">posts</Link>
-    </div>
+        </div>)) }
+      </div>
+    </>
   );
 }
 

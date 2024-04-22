@@ -1,5 +1,5 @@
 "use client"
-
+import "./order.css"
 import { useRouter } from "next/navigation";
 
 
@@ -11,12 +11,12 @@ function OrderProduct () {
     router.replace("/")
   }
   return (
-    <>
-      <div>OrderProduct</div>
+    <div className="order">
+      <div >OrderProduct</div>
       <button
         onClick={handleClick}
       >Place order</button>
-    </>
+    </div>
   )
 }
 
